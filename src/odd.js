@@ -8,13 +8,9 @@ do {
 }  while(integer < 0 || integer > MAX || Number.isNaN(integer) || !Number.isInteger(integer))
 
 while (integer > 0) {
-  let number = (integer % 10)
+  integer = (integer %2 !=0)
   integer = Math.floor(integer/10)
-  if (integer > 0) {
-   value = value + number + ", ";
- } else {
-   value = value + number + ". ";
+   value = value + number + ".";
  }
 
-}
 console.log("\n" + value + "\n");
