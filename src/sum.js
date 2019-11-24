@@ -31,4 +31,4 @@ for (let i = lowerBound; i <= upperBound; i++) {
 }
 let finalSum = sum.toLocaleString('en');
 
-console.log("\n" + finalSum + ".");
+console.log("\n" + finalSum + ".\n");
