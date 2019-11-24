@@ -1,11 +1,14 @@
 const readlineSync = require("readline-sync");
-const MIN = Number.MIN_SAFE_INTEGER
+const MIN = 1
 const MAX = Number.MAX_SAFE_INTEGER
+let sum = 0
+let number = 0
+let integer = 0
+
 console.log("");
-sum = 0
 do {
   integer = Number(readlineSync.question("Positive integer: "));
-}  while(integer < MIN || integer > MAX || Number.isNaN(integer) || !Number.isInteger(integer))
+}  while(integer < 1 || integer > MAX || Number.isNaN(integer) || !Number.isInteger(integer))
 
 while (integer > 0) {
   let number = (integer % 10)
