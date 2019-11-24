@@ -1,31 +1,43 @@
 const readlineSync = require("readline-sync");
+const MIN = 1;
+const MAX = Number.MAX_SAFE_INTEGER;
+let integer = 0;
+let value = 1;
+let factors = "\n";
+console.log()
 
-const min = 1
-const MAX = Number.MAX_SAFE_INTEGER
-let integer = 0
-let number = 1
-let numberDivided = 0
-let answer = ""
+do{
+  integer = Number(readlineSync.question("Positive integer: "));
+} while (integer < MIN || integer > MAX || !Number.isInteger(integer) || Number.isNaN(integer))
 
-console.log("");
-
-do {
-  integer = Number(readlineSync.question("Positive Integer: "));
+if (Math.sqrt(integer) % 1 == 0) {
+ number = Math.sqrt(integer) + 1
 }
-while (integer <= min || integer >= MAX || !Number.isInteger(integer) || Number.isNaN(integer))
-
-while (number <= Math.floor(Math.sqrt(integer))) {
-
-if (number <= integer) {
-  numberDivided = (integer % number)
-  if (number === Math.floor(Math.sqrt(integer))) {
-      answer = answer + number + ". "
+else {
+ number = Math.sqrt(integer)
 }
-    else if (numberDivided === 0) {
-    answer = answer + number + ", " + (integer/number) + ", "
+
+while (value < number) {
+  if ((integer / value) % 1 == 0) {
+    if (integer / value == value) {
+      factors += String(value);
+      if (value < Math.sqrt(integer) - 1) {
+        factors += ", "
+      }
+      else {
+        factors += "."
+      }
+    }
+    else {
+      factors += String(value) + ", " + String(integer/value)
+      if (value < Math.sqrt(integer)-1) {
+        factors += ", "
+      }
+      else {
+        factors += "."
+      }
+    }
   }
-  number++
+  value += 1
 }
-}
-
-console.log("\n" + answer + "\n")
+console.log(factors + "\n")
