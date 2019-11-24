@@ -1,7 +1,7 @@
 const readlineSync = require("readline-sync");
 
-const min = 1
-const max = 78
+const MIN = 1
+const MAX = 78
 let integer = 0
 let base = 1.618034
 let secondBase = -0.618034
@@ -10,7 +10,7 @@ console.log("");
 do {
   integer = Number(readlineSync.question("Positive Integer: "));
 }
-while (integer < min || integer > max || !Number.isInteger(integer) || Number.isNaN(integer))
+while (integer < MIN || integer > MAX || !Number.isInteger(integer) || Number.isNaN(integer))
 let exponent = integer
 let sum = (((Math.pow(base, exponent)) - (Math.pow(secondBase, exponent)))/Math.sqrt(5))
 
