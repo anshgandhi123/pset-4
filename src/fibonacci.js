@@ -8,7 +8,7 @@ let secondBase = -0.618034
 console.log("");
 
 do {
-  integer = Number(readlineSync.question("Positive Integer: "));
+  integer = Number(readlineSync.question("Positive integer: "));
 }
 while (integer < MIN || integer > MAX || !Number.isInteger(integer) || Number.isNaN(integer))
 let exponent = integer
